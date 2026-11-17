@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-green: #073B32;
+  --color-brand-green-deep: #082D29;
+  --color-brand-green-dark: #05241E;
+  --color-brand-green-light: #0E4F43;
+  --color-brand-gold: #C9974A;
+  --color-brand-gold-light: #DFB772;
+  --color-brand-gold-dark: #9E722E;
+  --color-brand-sand: #F3EFE6;
+  --color-brand-sand-light: #FAF8F5;
+  --color-brand-sand-dark: #E6DFD1;
+  --color-brand-sage: #99AD98;
+  --color-brand-sage-light: #E2ECE1;
+  --color-brand-sage-dark: #6B826A;
+
+  --font-heading: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  --background: #FAF8F5;
+  --foreground: #082D29;
+  --primary: #073B32;
+  --primary-foreground: #FAF8F5;
+  --accent: #C9974A;
+  --accent-foreground: #082D29;
+  --muted: #F3EFE6;
+  --muted-foreground: #4A5D58;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom selection */
+::selection {
+  background-color: #C9974A;
+  color: #082D29;
+}
+
+/* Keyframes for subtle animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F3EFE6;
+}
+::-webkit-scrollbar-thumb {
+  background: #073B32;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C9974A;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
